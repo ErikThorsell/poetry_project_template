@@ -1,6 +1,6 @@
 # Poetry Template Repository
 
-This repository is my goto template repository for projects using [Poetry][poetry].
+This repository contains my goto template for Python projects using [Poetry][poetry].
 
 It makes use of:
 
@@ -12,34 +12,47 @@ It makes use of:
   * flake8
   * mypy
   * black
-  * 
 * Template config for [git-conventional-commits][gcc]
 
 ## Getting started
 
-### 1. Make sure [pyenv][pyenv] is installed
-
-Specify your Python interpreter of choice by first installing it and then specifying the interpreter as your local interpreter for your project.
+### 0. Download and prepare the template
 
 ```
-pyenv install 3.9.4
-pyenv local 3.9.4
+$> curl -LO https://github.com/ErikThorsell/poetry_project_template/archive/refs/heads/main.zip
+$> unzip main.zip
+$> mv poetry_project_template-main <name of your project>
+```
+
+Create a new repository on e.g. [GitHub][github] and follow the instructions
+for creating a new repository on the command line.
+
+### 1. Make sure [pyenv][pyenv] is installed
+
+Specify your Python interpreter of choice by first installing it and then
+specifying the interpreter as your local interpreter for your project.
+
+```
+$> pyenv install 3.9.4
+$> pyenv local 3.9.4
 ```
 
 This will create a `.python-version` file.
-By default the `.python-version` file is present in `.gitignore`.
+I prefer to keep this file in the repository as I consider it an important
+aspect of the project.
+Others choose to ignore the file using `.gitignore`.
 
 ### 2. Create a virtual environment
 
 ```
-python -m venv .venv
-source .venv/bin/activate
+$> python -m venv .venv
+$> source .venv/bin/activate
 ```
 
 ### 3. Install your dependencies 
 
 ```
-poetry install
+$> poetry install
 ```
 
 ### 4. Run your application
@@ -57,3 +70,4 @@ Will create a CLI Script which you can execute using: `project_cli`.
 [pyenv]: https://github.com/pyenv/pyenv
 [poetry]: https://python-poetry.org/
 [gcc]: https://github.com/qoomon/git-conventional-commits
+[github]: https://github.com
